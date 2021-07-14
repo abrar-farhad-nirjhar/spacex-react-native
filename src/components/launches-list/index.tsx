@@ -11,7 +11,6 @@ export default function LaunchesList() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Launches List</Text>
       <ScrollView contentContainerStyle={styles.scroll}>
         {launchesList}
       </ScrollView>
