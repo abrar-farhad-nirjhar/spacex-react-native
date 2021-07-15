@@ -8,7 +8,6 @@ interface Props {
 //DEV
 
 export default function ListImageItem({element}: Props) {
-  console.log(element.image);
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
