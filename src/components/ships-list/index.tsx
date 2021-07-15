@@ -28,7 +28,8 @@ export default function ShipsList() {
     <ScrollView contentContainerStyle={styles.scroll}>
       {shipsList}
       {ships.length !== 0 && loading && (
-        <View style={{justifyContent: 'center', alignItems: 'center'}}>
+        <View
+          style={{justifyContent: 'center', height: 100, alignItems: 'center'}}>
           <SvgXml xml={launch} width="30%" height="30%" />
         </View>
       )}
