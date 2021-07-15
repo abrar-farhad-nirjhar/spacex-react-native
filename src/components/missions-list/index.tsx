@@ -8,6 +8,7 @@ import React, {useContext} from 'react';
 import {Button, Text, View} from 'react-native';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 import {SvgXml} from 'react-native-svg';
+import root from 'utils/root-style';
 
 export default function MissionsList() {
   const {missions, loading, loadMore} = useContext(MissionsContext);
@@ -33,8 +34,7 @@ export default function MissionsList() {
     <ScrollView contentContainerStyle={styles.scroll}>
       {missionList}
       {missions.length !== 0 && loading && (
-        <View
-          style={{justifyContent: 'center', height: 100, alignItems: 'center'}}>
+        <View style={root.loadingRoot}>
           <SvgXml xml={launch} width="30%" height="30%" />
         </View>
       )}

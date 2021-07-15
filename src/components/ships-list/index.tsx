@@ -8,6 +8,7 @@ import React, {useContext} from 'react';
 import {Button, Text, View} from 'react-native';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 import {SvgXml} from 'react-native-svg';
+import root from 'utils/root-style';
 
 export default function ShipsList() {
   const {ships, loading, loadMore} = useContext(ShipsContext);
@@ -28,8 +29,7 @@ export default function ShipsList() {
     <ScrollView contentContainerStyle={styles.scroll}>
       {shipsList}
       {ships.length !== 0 && loading && (
-        <View
-          style={{justifyContent: 'center', height: 100, alignItems: 'center'}}>
+        <View style={root.loadingRoot}>
           <SvgXml xml={launch} width="30%" height="30%" />
         </View>
       )}

@@ -8,6 +8,7 @@ import {Text, Button, View} from 'react-native';
 import Loading from 'components/loading';
 import {SvgXml} from 'react-native-svg';
 import {launch} from 'components/_icons/launch';
+import root from 'utils/root-style';
 
 export default function RocketsList() {
   const {rockets, loading, loadMore} = useContext(RocketsContext);
@@ -29,8 +30,7 @@ export default function RocketsList() {
     <ScrollView contentContainerStyle={styles.scroll}>
       {rocketsList}
       {rockets.length !== 0 && loading && (
-        <View
-          style={{justifyContent: 'center', height: 100, alignItems: 'center'}}>
+        <View style={root.loadingRoot}>
           <SvgXml xml={launch} width="30%" height="30%" />
         </View>
       )}
