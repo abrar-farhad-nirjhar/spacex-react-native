@@ -5,6 +5,7 @@ import LAUNCHES from 'api/graphql/query/launches.query';
 interface Value {
   launches: any;
   loading: boolean;
+  loadMore: () => void;
 }
 
 export const LaunchesContext = createContext({} as Value);
@@ -14,23 +15,27 @@ interface Props {
 }
 
 export function LaunchesProvider({children}: Props) {
+  const [offset, setOffset] = useState(0);
+  const [missions, setMissions] = useState<any[]>([]);
   const {data, error, loading} = useQuery(LAUNCHES, {
     variables: {
-      offset: 0,
+      offset,
       limit: 10,
     },
     onError(error) {
       console.log(error);
     },
     onCompleted() {
-      console.log(data);
+      setMissions([...missions, ...data?.launches]);
     },
   });
 
-  console.log('Hello');
+  function loadMore() {
+    setOffset(offset + 10);
+  }
 
   return (
-    <LaunchesContext.Provider value={{launches: data?.launches, loading}}>
+    <LaunchesContext.Provider value={{launches: missions, loading, loadMore}}>
       {children}
     </LaunchesContext.Provider>
   );

@@ -1,9 +1,6 @@
 import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
-  scroll: {
-    padding: 20,
-  },
+  pageStyle: {flex: 1, justifyContent: 'center', alignItems: 'center'},
 });
-
 export default styles;
