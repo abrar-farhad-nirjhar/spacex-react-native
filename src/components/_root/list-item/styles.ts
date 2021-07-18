@@ -15,6 +15,7 @@ const styles = StyleSheet.create({
   name: {
     width: 150,
     fontSize: 15,
+    fontFamily: 'RobotoMono-Thin',
   },
 });
 export default styles;

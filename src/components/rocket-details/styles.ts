@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     marginBottom: 20,
+    fontFamily: 'RobotoMono-Thin',
   },
   description: {
     backgroundColor: variables.backgrounColor,
@@ -19,6 +20,7 @@ const styles = StyleSheet.create({
   },
   descriptionText: {
     fontSize: 16,
+    fontFamily: 'RobotoMono-Thin',
   },
 });
 

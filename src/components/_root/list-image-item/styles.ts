@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: '600',
     textAlign: 'center',
+    fontFamily: 'RobotoMono-Thin',
   },
 });
 export default styles;

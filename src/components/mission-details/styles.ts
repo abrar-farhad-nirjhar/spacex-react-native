@@ -13,11 +13,13 @@ const styles = StyleSheet.create({
   },
   descriptionText: {
     fontSize: 16,
+    fontFamily: 'RobotoMono-Thin',
   },
   header: {
     textAlign: 'center',
     marginBottom: 20,
     fontSize: 25,
+    fontFamily: 'RobotoMono-Thin',
   },
   social: {
     height: 50,
